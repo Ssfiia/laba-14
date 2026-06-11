@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 #include <string>
 #include <cctype>
@@ -15,16 +15,16 @@
 int input() {
     using namespace std;
     int method;
-    cout << "Способ ввода данных:" << endl;
-    cout << "1. Ввод с консоли" << endl;
-    cout << "2. Случайные числа" << endl;
-    cout << "3. Из файла" << endl;
-    cout << "Выбор: ";
+    cout << "РЎРїРѕСЃРѕР± РІРІРѕРґР° РґР°РЅРЅС‹С…:" << endl;
+    cout << "1. Р’РІРѕРґ СЃ РєРѕРЅСЃРѕР»Рё" << endl;
+    cout << "2. РЎР»СѓС‡Р°Р№РЅС‹Рµ С‡РёСЃР»Р°" << endl;
+    cout << "3. РР· С„Р°Р№Р»Р°" << endl;
+    cout << "Р’С‹Р±РѕСЂ: ";
     cin >> method;
     return method;
 }
 
-// Вспомогательная функция для вывода вектора
+// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° РІРµРєС‚РѕСЂР°
 void printVector(const std::vector<int>& v, const std::string& title) {
     using namespace std;
     cout << title << ": ";
@@ -34,10 +34,10 @@ void printVector(const std::vector<int>& v, const std::string& title) {
     cout << endl;
 }
 
-// Функция для ввода вектора с консоли
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІРІРѕРґР° РІРµРєС‚РѕСЂР° СЃ РєРѕРЅСЃРѕР»Рё
 void inputVector(std::vector<int>& v, const std::string& name, int size) {
     using namespace std;
-    cout << "Введите " << size << " элементов вектора " << name << ": ";
+    cout << "Р’РІРµРґРёС‚Рµ " << size << " СЌР»РµРјРµРЅС‚РѕРІ РІРµРєС‚РѕСЂР° " << name << ": ";
     v.clear();
     for (int i = 0; i < size; i++) {
         int x;
@@ -46,7 +46,7 @@ void inputVector(std::vector<int>& v, const std::string& name, int size) {
     }
 }
 
-// Функция для генерации случайного вектора заданного размера
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РіРµРЅРµСЂР°С†РёРё СЃР»СѓС‡Р°Р№РЅРѕРіРѕ РІРµРєС‚РѕСЂР° Р·Р°РґР°РЅРЅРѕРіРѕ СЂР°Р·РјРµСЂР°
 void randomVector(std::vector<int>& v, int size) {
     v.clear();
     for (int i = 0; i < size; i++) {
@@ -54,7 +54,7 @@ void randomVector(std::vector<int>& v, int size) {
     }
 }
 
-// Функция для генерации всех векторов
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РіРµРЅРµСЂР°С†РёРё РІСЃРµС… РІРµРєС‚РѕСЂРѕРІ
 void generateAllVectors(std::vector<int>& V0, std::vector<std::vector<int>>& vectors, int sizeV0, int sizeOthers, int N) {
     using namespace std;
     randomVector(V0, sizeV0);
@@ -66,7 +66,7 @@ void generateAllVectors(std::vector<int>& V0, std::vector<std::vector<int>>& vec
     }
 }
 
-// Функция для ввода всех векторов
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІРІРѕРґР° РІСЃРµС… РІРµРєС‚РѕСЂРѕРІ
 void inputAllVectors(std::vector<int>& V0, std::vector<std::vector<int>>& vectors, int sizeV0, int sizeOthers, int N) {
     using namespace std;
     inputVector(V0, "V0", sizeV0);    
@@ -78,12 +78,12 @@ void inputAllVectors(std::vector<int>& V0, std::vector<std::vector<int>>& vector
     }
 }
 
-// Функция для чтения векторов из файла
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ С‡С‚РµРЅРёСЏ РІРµРєС‚РѕСЂРѕРІ РёР· С„Р°Р№Р»Р°
 bool readVectorsFromFile(std::vector<int>& V0, std::vector<std::vector<int>>& vectors, int& sizeV0, int& sizeOthers, const std::string& filename) {
     using namespace std;
     ifstream file(filename);
     if (!file) {
-        cout << "Ошибка открытия файла!" << endl;
+        cout << "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°!" << endl;
         return false;
     }
     int N;
@@ -114,7 +114,7 @@ bool readVectorsFromFile(std::vector<int>& V0, std::vector<std::vector<int>>& ve
 
 void STL5Assoc2() {  
     using namespace std;
-    cout << "Найти количество векторов VI, содержащих все элементы V0 (без учета повторений)" << endl;
+    cout << "РќР°Р№С‚Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РІРµРєС‚РѕСЂРѕРІ VI, СЃРѕРґРµСЂР¶Р°С‰РёС… РІСЃРµ СЌР»РµРјРµРЅС‚С‹ V0 (Р±РµР· СѓС‡РµС‚Р° РїРѕРІС‚РѕСЂРµРЅРёР№)" << endl;
     
     vector<int> V0;
     vector<vector<int>> vectors;
@@ -122,44 +122,44 @@ void STL5Assoc2() {
     int method;
     method = input();
     if (method == 1) {
-        cout << "\nВведите размер вектора V0: ";
+        cout << "\nР’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РІРµРєС‚РѕСЂР° V0: ";
         cin >> sizeV0;
-        cout << "Введите размер всех векторов V1..VN: ";
+        cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РІСЃРµС… РІРµРєС‚РѕСЂРѕРІ V1..VN: ";
         cin >> sizeOthers;
-        cout << "Введите количество векторов N: ";
+        cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРµРєС‚РѕСЂРѕРІ N: ";
         cin >> N;
         
         if (sizeV0 > sizeOthers) {
-            cout << "Размер V0 (" << sizeV0 
-                 << ") больше размера остальных векторов (" << sizeOthers << ")" << endl;
-            cout << "Условие задачи нарушено!" << endl;
+            cout << "Р Р°Р·РјРµСЂ V0 (" << sizeV0 
+                 << ") Р±РѕР»СЊС€Рµ СЂР°Р·РјРµСЂР° РѕСЃС‚Р°Р»СЊРЅС‹С… РІРµРєС‚РѕСЂРѕРІ (" << sizeOthers << ")" << endl;
+            cout << "РЈСЃР»РѕРІРёРµ Р·Р°РґР°С‡Рё РЅР°СЂСѓС€РµРЅРѕ!" << endl;
         }
         
         inputAllVectors(V0, vectors, sizeV0, sizeOthers, N);
         
-        cout << "\nВведенные данные:" << endl;
+        cout << "\nР’РІРµРґРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ:" << endl;
         printVector(V0, "V0");
         for (int i = 0; i < vectors.size(); i++) {
             printVector(vectors[i], "V" + to_string(i + 1));
         }
     }
     else if (method == 2) {
-        cout << "\nВведите размер вектора V0: ";
+        cout << "\nР’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РІРµРєС‚РѕСЂР° V0: ";
         cin >> sizeV0;
-        cout << "Введите размер всех векторов V1..VN: ";
+        cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РІСЃРµС… РІРµРєС‚РѕСЂРѕРІ V1..VN: ";
         cin >> sizeOthers;
-        cout << "Введите количество векторов N: ";
+        cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРµРєС‚РѕСЂРѕРІ N: ";
         cin >> N;
         
         if (sizeV0 > sizeOthers) {
-            cout << "\nРазмер V0 (" << sizeV0 
-                 << ") больше размера остальных векторов (" << sizeOthers << ")" << endl;
-            cout << "Условие задачи нарушено!" << endl;
+            cout << "\nР Р°Р·РјРµСЂ V0 (" << sizeV0 
+                 << ") Р±РѕР»СЊС€Рµ СЂР°Р·РјРµСЂР° РѕСЃС‚Р°Р»СЊРЅС‹С… РІРµРєС‚РѕСЂРѕРІ (" << sizeOthers << ")" << endl;
+            cout << "РЈСЃР»РѕРІРёРµ Р·Р°РґР°С‡Рё РЅР°СЂСѓС€РµРЅРѕ!" << endl;
         }
         
         generateAllVectors(V0, vectors, sizeV0, sizeOthers, N);
         
-        cout << "\nСгенерированные данные:" << endl;
+        cout << "\nРЎРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅС‹Рµ РґР°РЅРЅС‹Рµ:" << endl;
         printVector(V0, "V0");
         for (int i = 0; i < vectors.size(); i++) {
             printVector(vectors[i], "V" + to_string(i + 1));
@@ -167,32 +167,32 @@ void STL5Assoc2() {
     }
     else if (method == 3) {
         string filename;
-        cout << "Введите имя файла для чтения: ";
+        cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р° РґР»СЏ С‡С‚РµРЅРёСЏ: ";
         cin >> filename;
         if (!readVectorsFromFile(V0, vectors, sizeV0, sizeOthers, filename)) {
             return;
         }
-        cout << "\nДанные из файла:" << endl;
-        cout << "Размер V0: " << sizeV0 << endl;
-        cout << "Размер векторов V1..V" << vectors.size() << ": " << sizeOthers << endl;
-        cout << "Количество векторов: " << vectors.size() << endl;
+        cout << "\nР”Р°РЅРЅС‹Рµ РёР· С„Р°Р№Р»Р°:" << endl;
+        cout << "Р Р°Р·РјРµСЂ V0: " << sizeV0 << endl;
+        cout << "Р Р°Р·РјРµСЂ РІРµРєС‚РѕСЂРѕРІ V1..V" << vectors.size() << ": " << sizeOthers << endl;
+        cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РІРµРєС‚РѕСЂРѕРІ: " << vectors.size() << endl;
         printVector(V0, "V0");
         for (int i = 0; i < vectors.size(); i++) {
             printVector(vectors[i], "V" + to_string(i + 1));
         }
         
         if (sizeV0 > sizeOthers) {
-            cout << "\nВ файле размер V0 (" << sizeV0 
-                 << ") больше размера остальных векторов (" << sizeOthers << ")" << endl;
-            cout << "Условие задачи нарушено!" << endl;
+            cout << "\nР’ С„Р°Р№Р»Рµ СЂР°Р·РјРµСЂ V0 (" << sizeV0 
+                 << ") Р±РѕР»СЊС€Рµ СЂР°Р·РјРµСЂР° РѕСЃС‚Р°Р»СЊРЅС‹С… РІРµРєС‚РѕСЂРѕРІ (" << sizeOthers << ")" << endl;
+            cout << "РЈСЃР»РѕРІРёРµ Р·Р°РґР°С‡Рё РЅР°СЂСѓС€РµРЅРѕ!" << endl;
         }
     }
     else {
-        cout << "Неверный выбор!" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ!" << endl;
         return;
     }
     set<int> setV0(V0.begin(), V0.end());
-    cout << "\nМножетво V0: ";
+    cout << "\nРњРЅРѕР¶РµС‚РІРѕ V0: ";
     for (int val : setV0) {
         cout << val << " ";
     }
@@ -204,18 +204,18 @@ void STL5Assoc2() {
     for (int i = 0; i < vectors.size(); i++) {
         set<int> setVi(vectors[i].begin(), vectors[i].end());
         
-        // Проверяем, содержит ли setVi все элементы setV0
+        // РџСЂРѕРІРµСЂСЏРµРј, СЃРѕРґРµСЂР¶РёС‚ Р»Рё setVi РІСЃРµ СЌР»РµРјРµРЅС‚С‹ setV0
         if (includes(setVi.begin(), setVi.end(), setV0.begin(), setV0.end())) {
             count++;
             indices.push_back(i + 1);
         }
     }
-    cout << "РЕЗУЛЬТАТ:" << endl;
-    cout << "Найдено " << count << " из " << vectors.size() 
-         << " векторов, содержащих все элементы V0" << endl;
+    cout << "Р Р•Р—РЈР›Р¬РўРђРў:" << endl;
+    cout << "РќР°Р№РґРµРЅРѕ " << count << " РёР· " << vectors.size() 
+         << " РІРµРєС‚РѕСЂРѕРІ, СЃРѕРґРµСЂР¶Р°С‰РёС… РІСЃРµ СЌР»РµРјРµРЅС‚С‹ V0" << endl;
     
     if (count > 0) {
-        cout << "Номера векторов: ";
+        cout << "РќРѕРјРµСЂР° РІРµРєС‚РѕСЂРѕРІ: ";
         for (int idx : indices) {
             cout << idx << " ";
         }
@@ -223,7 +223,7 @@ void STL5Assoc2() {
     }
 }
 
-// функция для вывода вектора
+// С„СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° РІРµРєС‚РѕСЂР°
 void printStringVector(const std::vector<std::string>& v, const std::string& title) {
     using namespace std;
     cout << title << ": ";
@@ -233,12 +233,12 @@ void printStringVector(const std::vector<std::string>& v, const std::string& tit
     cout << endl;
 }
 
-// Функция для чтения из файла
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ С‡С‚РµРЅРёСЏ РёР· С„Р°Р№Р»Р°
 bool readWordsFromFile(std::vector<std::string>& words, const std::string& filename) {
     using namespace std;
     ifstream file(filename);
     if (!file) {
-        cout << "Ошибка открытия файла!" << endl;
+        cout << "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°!" << endl;
         return false;
     }
     words.clear();
@@ -255,15 +255,15 @@ bool readWordsFromFile(std::vector<std::string>& words, const std::string& filen
 
 void STL5Assoc17() {
     using namespace std;
-    cout << "Определить суммарную длину слов, начинающихся с одной и той же буквы" << endl;
+    cout << "РћРїСЂРµРґРµР»РёС‚СЊ СЃСѓРјРјР°СЂРЅСѓСЋ РґР»РёРЅСѓ СЃР»РѕРІ, РЅР°С‡РёРЅР°СЋС‰РёС…СЃСЏ СЃ РѕРґРЅРѕР№ Рё С‚РѕР№ Р¶Рµ Р±СѓРєРІС‹" << endl;
     vector<string> V;
     int method;
     int n;
     method = input();
     if (method == 1) {
-        cout << "Введите количество слов: ";
+        cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕРІ: ";
         cin >> n;
-        cout << "Введите " << n << " слов (будут преобразованы в ЗАГЛАВНЫЕ): ";
+        cout << "Р’РІРµРґРёС‚Рµ " << n << " СЃР»РѕРІ (Р±СѓРґСѓС‚ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅС‹ РІ Р—РђР“Р›РђР’РќР«Р•): ";
         V.clear();
         for (int i = 0; i < n; i++) {
             string word;
@@ -273,10 +273,10 @@ void STL5Assoc17() {
             }
             V.push_back(word);
         }
-        printStringVector(V, "Введенные слова");
+        printStringVector(V, "Р’РІРµРґРµРЅРЅС‹Рµ СЃР»РѕРІР°");
     }
     else if (method == 2) {
-        cout << "Введите количество слов: ";
+        cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕРІ: ";
         cin >> n;
         V.clear();
         vector<string> words = { "CAT", "DOG", "SUN", "RUN", "JUMP", "BOOK",
@@ -289,18 +289,18 @@ void STL5Assoc17() {
             int random_index = rand() % words.size();
             V.push_back(words[random_index]);
         }
-        cout << "\nСгенерированные слова:" << endl;
-        printStringVector(V, "Слова");
+        cout << "\nРЎРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅС‹Рµ СЃР»РѕРІР°:" << endl;
+        printStringVector(V, "РЎР»РѕРІР°");
     }
     else if (method == 3) {
         string filename;
-        cout << "Введите имя файла для чтения: ";
+        cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р° РґР»СЏ С‡С‚РµРЅРёСЏ: ";
         cin >> filename;
         if (!readWordsFromFile(V, filename)) {
             return;
         }
-        cout << "\nСлова из файла:" << endl;
-        printStringVector(V, "Слова");
+        cout << "\nРЎР»РѕРІР° РёР· С„Р°Р№Р»Р°:" << endl;
+        printStringVector(V, "РЎР»РѕРІР°");
     }
     map<char, int> M;
 
@@ -309,25 +309,25 @@ void STL5Assoc17() {
         if (!it->empty()) {
             char firstChar = (*it)[0];
             M[firstChar] += it->size();
-            cout << "  Слово \"" << *it << "\" (длина=" << it->size()
-                << ") -> буква '" << firstChar << "', сумма=" << M[firstChar] << endl;
+            cout << "  РЎР»РѕРІРѕ \"" << *it << "\" (РґР»РёРЅР°=" << it->size()
+                << ") -> Р±СѓРєРІР° '" << firstChar << "', СЃСѓРјРјР°=" << M[firstChar] << endl;
         }
     }
 
-    cout << "\nРЕЗУЛЬТАТЫ:" << endl;
+    cout << "\nР Р•Р—РЈР›Р¬РўРђРўР«:" << endl;
     int totalLength = 0;
     for (map<char, int>::iterator it = M.begin(); it != M.end(); ++it) {
-        cout << "Буква '" << it->first << "' -> суммарная длина: " << it->second << endl;
+        cout << "Р‘СѓРєРІР° '" << it->first << "' -> СЃСѓРјРјР°СЂРЅР°СЏ РґР»РёРЅР°: " << it->second << endl;
         totalLength += it->second;
     }
 }
 
-// Функция для чтения из файла
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ С‡С‚РµРЅРёСЏ РёР· С„Р°Р№Р»Р°
 bool readNumbersFromFile(std::vector<int>& numbers, const std::string& filename) {
     using namespace std;
     ifstream file(filename);
     if (!file) {
-        cout << "Ошибка открытия файла!" << endl;
+        cout << "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°!" << endl;
         return false;
     }
     numbers.clear();
@@ -341,45 +341,45 @@ bool readNumbersFromFile(std::vector<int>& numbers, const std::string& filename)
 
 void STL5Assoc21() {
     using namespace std;
-    cout << "Группировка элементов по последней цифре с использованием multimap" << endl;
+    cout << "Р“СЂСѓРїРїРёСЂРѕРІРєР° СЌР»РµРјРµРЅС‚РѕРІ РїРѕ РїРѕСЃР»РµРґРЅРµР№ С†РёС„СЂРµ СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј multimap" << endl;
     vector<int> V;
     int method;
     int n;
     method = input();
     if (method == 1) {
-        cout << "Введите количество элементов: ";
+        cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ: ";
         cin >> n;
-        cout << "Введите " << n << " целых чисел: ";
+        cout << "Р’РІРµРґРёС‚Рµ " << n << " С†РµР»С‹С… С‡РёСЃРµР»: ";
         V.clear();
         for (int i = 0; i < n; i++) {
             int x;
             cin >> x;
             V.push_back(x);
         }
-        printVector(V, "Введенные числа");
+        printVector(V, "Р’РІРµРґРµРЅРЅС‹Рµ С‡РёСЃР»Р°");
     }
     else if (method == 2) {
-        cout << "Введите количество элементов: ";
+        cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ: ";
         cin >> n;
         V.clear();
         for (int i = 0; i < n; i++) {
             V.push_back(rand() % 100);
         }
-        cout << "\nСгенерированные числа:" << endl;
-        printVector(V, "Числа");
+        cout << "\nРЎРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅС‹Рµ С‡РёСЃР»Р°:" << endl;
+        printVector(V, "Р§РёСЃР»Р°");
     }
     else if (method == 3) {
         string filename;
-        cout << "Введите имя файла для чтения: ";
+        cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р° РґР»СЏ С‡С‚РµРЅРёСЏ: ";
         cin >> filename;
         if (!readNumbersFromFile(V, filename)) {
             return;
         }
-        cout << "\nЧисла из файла:" << endl;
-        printVector(V, "Числа");
+        cout << "\nР§РёСЃР»Р° РёР· С„Р°Р№Р»Р°:" << endl;
+        printVector(V, "Р§РёСЃР»Р°");
     }
     else {
-        cout << "Неверный выбор!" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ!" << endl;
         return;
     }
 
@@ -390,23 +390,23 @@ void STL5Assoc21() {
         M.insert(pair<int, int>(lastDigit, *it));
     }
 
-    cout << "\nВсе элементы (ключ: значение):" << endl;
+    cout << "\nР’СЃРµ СЌР»РµРјРµРЅС‚С‹ (РєР»СЋС‡: Р·РЅР°С‡РµРЅРёРµ):" << endl;
     for (multimap<int, int>::iterator it = M.begin(); it != M.end(); ++it) {
         cout << "  " << it->first << " : " << it->second << endl;
     }
 
-    cout << "\nГруппировка по ключам:" << endl;
+    cout << "\nР“СЂСѓРїРїРёСЂРѕРІРєР° РїРѕ РєР»СЋС‡Р°Рј:" << endl;
 
     int Key = -1;
     int groupCount = 0;
     for (multimap<int, int>::iterator it = M.begin(); it != M.end(); ++it) {
         if (it->first != Key) {
             if (Key != -1) {
-                cout << "  (всего " << groupCount << " элементов)";
+                cout << "  (РІСЃРµРіРѕ " << groupCount << " СЌР»РµРјРµРЅС‚РѕРІ)";
             }
             Key = it->first;
             groupCount = 1;
-            cout << "\nЦифра " << Key << ": ";
+            cout << "\nР¦РёС„СЂР° " << Key << ": ";
             cout << it->second;
         }
         else {
@@ -415,6 +415,6 @@ void STL5Assoc21() {
         }
     }
     if (Key != -1) {
-        cout << "  (всего " << groupCount << " элементов)" << endl;
+        cout << "  (РІСЃРµРіРѕ " << groupCount << " СЌР»РµРјРµРЅС‚РѕРІ)" << endl;
     }
 }
